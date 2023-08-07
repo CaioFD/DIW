@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PortalGamer HOME</title>
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+        <!-- import css -->
+        <link rel="stylesheet" href="css/style.css">
+        <script src="search.js" defer> </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1>PortalGamer</h1>
+                <a href="./pages/novo.html">Novos games</a>
+                <a href="./pages/conquista.html">Conquistas</a>
+                
+                <a href="./pages/plataformas.html">Plataformas existentes</a>
+                <a href="./pages/contato.html">Feedback</a>
+                <input type="search" id="search-input" placeholder="Pesquisar games ">
+            </nav>
+        </header>
+
+        <main>
+            <aside>
+                <p id="identity"></p>
+            </aside>
+            <h2>Jogos Com Maiores Sucessos</h2>
+
+            <section id="gamesCards">
+
+            </section>
+        </main>
+
+        <script type="module" src="js/main.js"></script>  
+    </body>
+
+    <script> 
+        
+        document.querySelector('#search-input').
+        addEventListener('input', filterList)
+
+        function filterList(){
+            const searchInput = document.querySelector
+            ('#search-input')
+            const filter = searchInput.value.toLowerCase()
+            const listItems = document.querySelectorAll('div')
+
+            listItems.forEach((item) => {
+                let text = item.textContent
+                if(text.toLowerCase().includes(filter.toLowerCase())){
+                    item.style.display = '';
+                }
+                else{
+                    item.style.display = 'none';
+                }
+            });
+        }
+    
+    
+    
+    
+    
+    </script>
+</html>
